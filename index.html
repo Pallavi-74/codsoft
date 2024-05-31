@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>calculator</title>
+    <style>
+        input[type="text"] { 
+                    padding: 20px 40px; 
+                    font-size: 24px; 
+                    font-weight: bold; 
+                    border: none; 
+                    border-radius: 2px; 
+                    border: 2px solid black; 
+                } 
+        button[type="button"] { 
+                    width: 100%; 
+                    color: black; 
+        		background-color:cyan;
+                    font-weight: bold; 
+                    border: 1; 
+                    border-radius: 2px; 
+        		padding: 20px 40px;
+          		font-size: 24px;
+                }
+        
+        #calculator {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-gap: 10px;
+          max-width: 200px;
+          margin: 0 auto;
+        }
+        
+    </style>
+    <script language="javascript">
+        function clearScreen() 
+        {
+        document.getElementById('result').value =''; 
+        }
+        function display(value)
+         {
+        document.getElementById('result').value += value; 
+        }
+        function calculate() {
+          let expression = document.getElementById('result').value;
+          let res = eval(expression);
+          document.getElementById('result').value = res;
+        }
+    </script>
+</head>
+
+<body style="background-color:lavender;">
+    <center>
+        <table id="calculator ">
+            <tr>
+                <td colspan="3"> <input type="text" id="result" readonly> </td>
+                <td><button type="button" onclick="clearScreen()">C</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="display('9')">9</button></td>
+                <td><button type="button" onclick="calculate()">=</button></td>
+                <td><button type="button" onclick="display('/')">/</button></td>
+                <td><button type="button" onclick="display('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="display('6')">6</button></td>
+                <td><button type="button" onclick="display('7')">7</button></td>
+                <td><button type="button" onclick="display('8')">8</button></td>
+                <td><button type="button" onclick="display('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="display('3')">3</button></td>
+                <td><button type="button" onclick="display('4')">4</button></td>
+                <td><button type="button" onclick="display('5')">5</button></td>
+                <td><button type="button" onclick="display('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="display('0')">0</button></td>
+                <td><button type="button" onclick="display('1')">1</button></td>
+                <td><button type="button" onclick="display('2')">2</button></td>
+                <td><button type="button" onclick="display('.')">.</button></td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>
